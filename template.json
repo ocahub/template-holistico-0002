@@ -1,0 +1,1311 @@
+{
+  "id": "template-holistico-0002",
+  "name": "Holístico 0002 · Lua",
+  "version": "1.0.0",
+  "description": "Site de astróloga e terapeuta: fotos em arco, cartões de mapas e sessões, como funciona, perguntas e loja. Tons de vinho, coral e marfim.",
+  "modules": [
+    "sales:CreateProduct"
+  ],
+  "groups": [
+    "Topo",
+    "Loja",
+    "Conteúdo",
+    "Contato"
+  ],
+  "theme": {
+    "palettes": [
+      {
+        "id": "coral",
+        "label": "Vinho e coral",
+        "primary": "#6E2433",
+        "accent": "#C2471F",
+        "accentDark": "#A23A18",
+        "soft": "#FBF6EE",
+        "deep": "#F4EADC",
+        "dark": "#221B29",
+        "ink": "#2B2226",
+        "muted": "#5E5155"
+      },
+      {
+        "id": "lavanda",
+        "label": "Lavanda",
+        "primary": "#4B3A6E",
+        "accent": "#7D5FAE",
+        "accentDark": "#634692",
+        "soft": "#F8F6FB",
+        "deep": "#ECE4F7",
+        "dark": "#1F1A2B",
+        "ink": "#262130",
+        "muted": "#5A5366"
+      },
+      {
+        "id": "terra",
+        "label": "Terra",
+        "primary": "#5B3A24",
+        "accent": "#B5651D",
+        "accentDark": "#934F14",
+        "soft": "#FAF6F0",
+        "deep": "#F0E4D4",
+        "dark": "#2A2019",
+        "ink": "#2A2019",
+        "muted": "#5F5247"
+      },
+      {
+        "id": "mar",
+        "label": "Mar",
+        "primary": "#1F4E5F",
+        "accent": "#2F8F83",
+        "accentDark": "#247268",
+        "soft": "#F4F8F7",
+        "deep": "#E1EEEB",
+        "dark": "#14262D",
+        "ink": "#16252B",
+        "muted": "#4D5F64"
+      }
+    ],
+    "fonts": [
+      {
+        "id": "cormorant",
+        "label": "Clássica",
+        "display": "'Cormorant Garamond', Georgia, serif",
+        "body": "'Jost', system-ui, sans-serif",
+        "weight": 500
+      },
+      {
+        "id": "moderna",
+        "label": "Moderna",
+        "display": "'Jost', system-ui, sans-serif",
+        "body": "'Jost', system-ui, sans-serif",
+        "weight": 500
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "header",
+      "label": "Cabeçalho",
+      "group": "Global",
+      "global": true,
+      "description": "Marca, menu, conta e sacola. Aparece em todas as páginas.",
+      "fields": [
+        {
+          "key": "logoImage",
+          "label": "Logo (imagem)",
+          "type": "image",
+          "optional": true,
+          "help": "Sem imagem, vale o logotipo da loja; sem ele, o nome em texto."
+        },
+        {
+          "key": "logo",
+          "label": "Nome da marca",
+          "type": "text"
+        },
+        {
+          "key": "tagline",
+          "label": "Linha abaixo do nome",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "shopLabel",
+          "label": "Nome da loja no menu",
+          "type": "text",
+          "help": "O link para a prateleira (/loja). Ex.: Loja, Atendimentos."
+        }
+      ]
+    },
+    {
+      "type": "hero",
+      "label": "Abertura com foto",
+      "group": "Topo",
+      "description": "A primeira dobra: chamada, título, texto, dois botões e a foto.",
+      "fields": [
+        {
+          "key": "image",
+          "label": "Foto",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "button",
+          "label": "Botão principal",
+          "type": "text"
+        },
+        {
+          "key": "link",
+          "label": "Link do botão principal",
+          "type": "text",
+          "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        },
+        {
+          "key": "button2",
+          "label": "Botão secundário",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "link2",
+          "label": "Link do botão secundário",
+          "type": "text",
+          "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        },
+        {
+          "key": "bullets",
+          "label": "Destaques abaixo dos botões",
+          "type": "items",
+          "min": 0,
+          "max": 4,
+          "itemTitle": "label",
+          "fields": [
+            {
+              "key": "label",
+              "label": "Texto",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "label": "Novo destaque"
+          }
+        },
+        {
+          "key": "badgeTitle",
+          "label": "Selo sobre a foto (título)",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "badgeText",
+          "label": "Selo sobre a foto (texto)",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "intro",
+      "label": "Apresentação de página",
+      "group": "Topo",
+      "description": "Topo das páginas internas (Sobre, Contato): foto opcional, título e texto.",
+      "fields": [
+        {
+          "key": "image",
+          "label": "Foto",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "lead",
+          "label": "Texto em destaque",
+          "type": "area"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "button",
+          "label": "Botão principal",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "link",
+          "label": "Link do botão principal",
+          "type": "text",
+          "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        },
+        {
+          "key": "button2",
+          "label": "Botão secundário",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "link2",
+          "label": "Link do botão secundário",
+          "type": "text",
+          "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        }
+      ]
+    },
+    {
+      "type": "products",
+      "label": "Vitrine da loja",
+      "group": "Loja",
+      "description": "Os produtos à venda na loja: sessões, mapas, produtos físicos ou assinaturas.",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Texto",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "source",
+          "label": "Quais produtos mostrar",
+          "type": "select",
+          "options": [
+            {
+              "value": "todos",
+              "label": "Todos os produtos"
+            },
+            {
+              "value": "servicos",
+              "label": "Sessões com horário"
+            },
+            {
+              "value": "mapas",
+              "label": "Mapas astrais"
+            },
+            {
+              "value": "produtos",
+              "label": "Produtos físicos"
+            },
+            {
+              "value": "assinaturas",
+              "label": "Assinaturas"
+            }
+          ]
+        },
+        {
+          "key": "count",
+          "label": "Quantidade",
+          "type": "select",
+          "options": [
+            {
+              "value": "3",
+              "label": "3 produtos"
+            },
+            {
+              "value": "4",
+              "label": "4 produtos"
+            },
+            {
+              "value": "6",
+              "label": "6 produtos"
+            },
+            {
+              "value": "8",
+              "label": "8 produtos"
+            }
+          ]
+        },
+        {
+          "key": "layout",
+          "label": "Formato",
+          "type": "select",
+          "options": [
+            {
+              "value": "grade",
+              "label": "Grade"
+            },
+            {
+              "value": "carrossel",
+              "label": "Carrossel (rola para o lado)"
+            }
+          ]
+        },
+        {
+          "key": "button",
+          "label": "Botão para a loja",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "sample",
+      "label": "Mapa astral grátis",
+      "group": "Loja",
+      "description": "Convite para a amostra grátis do mapa. Só aparece quando a loja oferece a amostra (Mapa astral › Amostra grátis).",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "button",
+          "label": "Botão",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "services",
+      "label": "Cartões de serviços",
+      "group": "Conteúdo",
+      "description": "Uma grade de cartões com símbolo, título, texto e link.",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Texto",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "items",
+          "label": "Cartões",
+          "type": "items",
+          "min": 1,
+          "max": 9,
+          "itemTitle": "title",
+          "fields": [
+            {
+              "key": "icon",
+              "label": "Símbolo",
+              "type": "text",
+              "help": "Um caractere: ☉ ☾ ✦ ♡ ☆ ↻"
+            },
+            {
+              "key": "title",
+              "label": "Título",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "area"
+            },
+            {
+              "key": "linkLabel",
+              "label": "Texto do link",
+              "type": "text",
+              "optional": true
+            },
+            {
+              "key": "link",
+              "label": "Link",
+              "type": "text",
+              "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+            }
+          ],
+          "newItem": {
+            "icon": "✦",
+            "title": "Novo serviço",
+            "text": "Conte em poucas linhas o que é e para quem é.",
+            "linkLabel": "Ver valores",
+            "link": "/loja"
+          }
+        },
+        {
+          "key": "note",
+          "label": "Frase de fechamento",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "sessions",
+      "label": "Cartões com foto",
+      "group": "Conteúdo",
+      "description": "Dois ou três atendimentos com foto grande, texto e link.",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "items",
+          "label": "Cartões",
+          "type": "items",
+          "min": 1,
+          "max": 3,
+          "itemTitle": "title",
+          "fields": [
+            {
+              "key": "image",
+              "label": "Foto",
+              "type": "image"
+            },
+            {
+              "key": "eyebrow",
+              "label": "Chamada pequena",
+              "type": "text"
+            },
+            {
+              "key": "title",
+              "label": "Título",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "area"
+            },
+            {
+              "key": "linkLabel",
+              "label": "Texto do link",
+              "type": "text"
+            },
+            {
+              "key": "link",
+              "label": "Link",
+              "type": "text",
+              "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+            }
+          ],
+          "newItem": {
+            "image": "/_template/img/cartas.svg",
+            "eyebrow": "Com horário marcado",
+            "title": "Novo atendimento",
+            "text": "Conte como é o atendimento.",
+            "linkLabel": "Ver valor e agendar",
+            "link": "/loja"
+          }
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "label": "Como funciona",
+      "group": "Conteúdo",
+      "description": "Passos numerados: da escolha ao atendimento.",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "subtitle",
+          "label": "Texto",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "items",
+          "label": "Passos",
+          "type": "items",
+          "min": 1,
+          "max": 4,
+          "itemTitle": "title",
+          "fields": [
+            {
+              "key": "title",
+              "label": "Título",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "area"
+            }
+          ],
+          "newItem": {
+            "title": "Novo passo",
+            "text": "Explique o passo."
+          }
+        }
+      ]
+    },
+    {
+      "type": "about",
+      "label": "Sobre (faixa com foto)",
+      "group": "Conteúdo",
+      "description": "A pessoa por trás dos atendimentos: foto, título, texto e botão.",
+      "fields": [
+        {
+          "key": "image",
+          "label": "Foto",
+          "type": "image"
+        },
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "button",
+          "label": "Botão",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "link",
+          "label": "Link do botão",
+          "type": "text",
+          "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        }
+      ]
+    },
+    {
+      "type": "split",
+      "label": "Texto e foto lado a lado",
+      "group": "Conteúdo",
+      "description": "Uma frase grande ao lado de uma foto.",
+      "fields": [
+        {
+          "key": "text",
+          "label": "Frase",
+          "type": "area"
+        },
+        {
+          "key": "image",
+          "label": "Foto",
+          "type": "image"
+        },
+        {
+          "key": "button",
+          "label": "Botão",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "link",
+          "label": "Link do botão",
+          "type": "text",
+          "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        },
+        {
+          "key": "side",
+          "label": "Foto",
+          "type": "select",
+          "options": [
+            {
+              "value": "direita",
+              "label": "À direita"
+            },
+            {
+              "value": "esquerda",
+              "label": "À esquerda"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "label": "Citação",
+      "group": "Conteúdo",
+      "description": "Uma frase em destaque numa faixa colorida, com botão opcional.",
+      "fields": [
+        {
+          "key": "text",
+          "label": "Frase",
+          "type": "area"
+        },
+        {
+          "key": "button",
+          "label": "Botão",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "link",
+          "label": "Link do botão",
+          "type": "text",
+          "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "label": "Trajetória",
+      "group": "Conteúdo",
+      "description": "Formação ou história em etapas, com texto e fotos.",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "items",
+          "label": "Etapas",
+          "type": "items",
+          "min": 1,
+          "max": 8,
+          "itemTitle": "title",
+          "fields": [
+            {
+              "key": "step",
+              "label": "Etiqueta",
+              "type": "text"
+            },
+            {
+              "key": "title",
+              "label": "Título",
+              "type": "text"
+            },
+            {
+              "key": "text",
+              "label": "Texto",
+              "type": "area"
+            }
+          ],
+          "newItem": {
+            "step": "Etapa",
+            "title": "Nova etapa",
+            "text": "O que aconteceu."
+          }
+        },
+        {
+          "key": "closing",
+          "label": "Frase de fechamento",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "closingText",
+          "label": "Texto de fechamento",
+          "type": "area",
+          "optional": true
+        },
+        {
+          "key": "image1",
+          "label": "Foto grande",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "image2",
+          "label": "Foto menor 1",
+          "type": "image",
+          "optional": true
+        },
+        {
+          "key": "image3",
+          "label": "Foto menor 2",
+          "type": "image",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "label": "Depoimentos",
+      "group": "Conteúdo",
+      "description": "O que dizem os clientes. Sem depoimentos, a seção não aparece no site.",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "items",
+          "label": "Depoimentos",
+          "type": "items",
+          "min": 0,
+          "max": 6,
+          "itemTitle": "name",
+          "fields": [
+            {
+              "key": "quote",
+              "label": "Depoimento",
+              "type": "area"
+            },
+            {
+              "key": "name",
+              "label": "Nome",
+              "type": "text"
+            },
+            {
+              "key": "detail",
+              "label": "Atendimento",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "quote": "Escreva aqui o depoimento.",
+            "name": "Nome",
+            "detail": "Atendimento"
+          }
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "label": "Perguntas frequentes",
+      "group": "Contato",
+      "description": "Perguntas e respostas, com o WhatsApp para quem não achar a sua.",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "whatsapp",
+          "label": "Convite para o WhatsApp",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "items",
+          "label": "Perguntas",
+          "type": "items",
+          "min": 1,
+          "max": 12,
+          "itemTitle": "q",
+          "fields": [
+            {
+              "key": "q",
+              "label": "Pergunta",
+              "type": "text"
+            },
+            {
+              "key": "a",
+              "label": "Resposta",
+              "type": "area"
+            }
+          ],
+          "newItem": {
+            "q": "Nova pergunta?",
+            "a": "A resposta."
+          }
+        }
+      ]
+    },
+    {
+      "type": "contact",
+      "label": "Contato",
+      "group": "Contato",
+      "description": "WhatsApp com assuntos prontos, e-mail, Instagram e horário (dos Contatos do site da loja).",
+      "fields": [
+        {
+          "key": "eyebrow",
+          "label": "Chamada pequena",
+          "type": "text"
+        },
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "topics",
+          "label": "Assuntos do WhatsApp",
+          "type": "items",
+          "min": 0,
+          "max": 6,
+          "itemTitle": "label",
+          "fields": [
+            {
+              "key": "label",
+              "label": "Assunto",
+              "type": "text"
+            },
+            {
+              "key": "message",
+              "label": "Mensagem pronta",
+              "type": "text"
+            }
+          ],
+          "newItem": {
+            "label": "Novo assunto",
+            "message": "Olá! Vim pelo site."
+          }
+        },
+        {
+          "key": "hours",
+          "label": "Horário de atendimento",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "button",
+          "label": "Botão do WhatsApp",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "label": "Chamada final",
+      "group": "Contato",
+      "description": "Faixa de fechamento com dois botões: a loja e o WhatsApp.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "text",
+          "label": "Texto",
+          "type": "area"
+        },
+        {
+          "key": "button",
+          "label": "Botão principal",
+          "type": "text"
+        },
+        {
+          "key": "link",
+          "label": "Link do botão principal",
+          "type": "text",
+          "help": "Ex.: /loja, /sobre ou um endereço completo. Vazio: abre o WhatsApp da loja."
+        },
+        {
+          "key": "whatsapp",
+          "label": "Botão do WhatsApp",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "label": "Texto",
+      "group": "Conteúdo",
+      "description": "Título e parágrafos.",
+      "fields": [
+        {
+          "key": "title",
+          "label": "Título",
+          "type": "text"
+        },
+        {
+          "key": "body",
+          "label": "Texto",
+          "type": "area"
+        }
+      ]
+    },
+    {
+      "type": "footer",
+      "label": "Rodapé",
+      "group": "Global",
+      "global": true,
+      "description": "Texto da marca, menu e contatos. Aparece em todas as páginas.",
+      "fields": [
+        {
+          "key": "about",
+          "label": "Texto sobre a marca",
+          "type": "area"
+        },
+        {
+          "key": "whatsapp",
+          "label": "WhatsApp (texto)",
+          "type": "text"
+        },
+        {
+          "key": "email",
+          "label": "E-mail",
+          "type": "text"
+        },
+        {
+          "key": "instagram",
+          "label": "Instagram",
+          "type": "text"
+        },
+        {
+          "key": "hours",
+          "label": "Horário de atendimento",
+          "type": "text",
+          "optional": true
+        },
+        {
+          "key": "note",
+          "label": "Linha final",
+          "type": "text",
+          "optional": true
+        }
+      ]
+    }
+  ],
+  "sectionDefaults": {
+    "header": {
+      "logoImage": "",
+      "logo": "{empresa}",
+      "tagline": "Astrologia · Tarot",
+      "shopLabel": "Atendimentos"
+    },
+    "hero": {
+      "image": "/_template/img/retrato.svg",
+      "eyebrow": "Astrologia · Tarot · Terapias",
+      "title": "Olhar para si por uma nova perspectiva.",
+      "subtitle": "Atendimentos para compreender o presente, reconhecer seus ciclos e fazer escolhas mais conscientes.",
+      "button": "Agendar um atendimento",
+      "link": "/loja",
+      "button2": "Conhecer",
+      "link2": "/sobre",
+      "bullets": [
+        {
+          "label": "Atendimento online"
+        },
+        {
+          "label": "Pix ou cartão"
+        },
+        {
+          "label": "Horário marcado"
+        }
+      ],
+      "badgeTitle": "Mapa astral",
+      "badgeText": "a foto do céu do seu nascimento"
+    },
+    "intro": {
+      "image": "/_template/img/retrato.svg",
+      "eyebrow": "Sobre mim",
+      "title": "Prazer, eu sou {empresa}.",
+      "lead": "Conte em uma frase quem você é e o que move o seu trabalho.",
+      "text": "Escreva aqui a sua história: como começou, o que estudou e como atende.",
+      "button": "Agendar um atendimento",
+      "link": "/loja",
+      "button2": "Falar comigo",
+      "link2": ""
+    },
+    "products": {
+      "eyebrow": "Loja",
+      "title": "Atendimentos e produtos",
+      "subtitle": "Escolha, pague pelo site e marque o seu horário.",
+      "source": "todos",
+      "count": "3",
+      "layout": "grade",
+      "button": "Ver a loja"
+    },
+    "sample": {
+      "eyebrow": "Mapa astral grátis",
+      "title": "O seu Sol, a sua Lua e o seu Ascendente, de presente.",
+      "button": "Quero o meu mapa grátis"
+    },
+    "services": {
+      "eyebrow": "Astrologia",
+      "title": "Compreender quem você é",
+      "subtitle": "Cada mapa é uma forma de olhar para a sua história com mais consciência.",
+      "items": [
+        {
+          "icon": "☉",
+          "title": "Mapa Astral",
+          "text": "A foto do céu no momento do seu nascimento: personalidade, relações e caminhos.",
+          "linkLabel": "Ver valores",
+          "link": "/loja"
+        },
+        {
+          "icon": "↻",
+          "title": "Revolução Solar",
+          "text": "Os temas do seu novo ciclo, de um aniversário ao outro.",
+          "linkLabel": "Ver valores",
+          "link": "/loja"
+        },
+        {
+          "icon": "♡",
+          "title": "Sinastria",
+          "text": "As afinidades e as diferenças de uma relação, para viver com mais consciência.",
+          "linkLabel": "Ver valores",
+          "link": "/loja"
+        }
+      ],
+      "note": "Cada mapa é uma oportunidade de olhar para si por uma nova perspectiva."
+    },
+    "sessions": {
+      "eyebrow": "Sessões",
+      "title": "Atendimentos com horário marcado",
+      "items": [
+        {
+          "image": "/_template/img/cartas.svg",
+          "eyebrow": "Com horário marcado",
+          "title": "Tarot",
+          "text": "Um espaço de escuta e reflexão para olhar a sua situação por outros ângulos.",
+          "linkLabel": "Ver valor e agendar",
+          "link": "/loja"
+        },
+        {
+          "image": "/_template/img/lua.svg",
+          "eyebrow": "Com horário marcado",
+          "title": "Terapia integrativa",
+          "text": "Um olhar para o corpo, as emoções e os vínculos, no seu tempo.",
+          "linkLabel": "Ver valor e agendar",
+          "link": "/loja"
+        }
+      ]
+    },
+    "steps": {
+      "eyebrow": "Como funciona",
+      "title": "Em três passos",
+      "subtitle": "Tudo pelo site: da escolha ao horário marcado.",
+      "items": [
+        {
+          "title": "Escolha o atendimento",
+          "text": "Veja as sessões e os mapas na loja."
+        },
+        {
+          "title": "Pague pelo site",
+          "text": "Pix ou cartão, em ambiente seguro."
+        },
+        {
+          "title": "Agende ou envie seus dados",
+          "text": "Nas sessões, escolha o horário; nos mapas, informe data, hora e cidade de nascimento."
+        }
+      ]
+    },
+    "about": {
+      "image": "/_template/img/retrato.svg",
+      "eyebrow": "Sobre mim",
+      "title": "Um trabalho feito de escuta e cuidado.",
+      "text": "Conte quem você é, a sua formação e o propósito do seu trabalho.",
+      "button": "Conhecer a minha história",
+      "link": "/sobre"
+    },
+    "split": {
+      "text": "Uma frase que resume o seu trabalho, em letras grandes.",
+      "image": "/_template/img/cartas.svg",
+      "button": "",
+      "link": "",
+      "side": "direita"
+    },
+    "quote": {
+      "text": "“Escreva aqui uma frase que represente o seu propósito.”",
+      "button": "",
+      "link": ""
+    },
+    "timeline": {
+      "eyebrow": "Trajetória",
+      "title": "Formação",
+      "text": "Os caminhos que trouxeram você até aqui.",
+      "items": [
+        {
+          "step": "O início",
+          "title": "Primeira formação",
+          "text": "Onde tudo começou."
+        },
+        {
+          "step": "Hoje",
+          "title": "Atendimentos",
+          "text": "Como você atende hoje."
+        }
+      ],
+      "closing": "",
+      "closingText": "",
+      "image1": "/_template/img/lua.svg",
+      "image2": "",
+      "image3": ""
+    },
+    "testimonials": {
+      "eyebrow": "Depoimentos",
+      "title": "Quem já passou por aqui",
+      "items": []
+    },
+    "faq": {
+      "eyebrow": "Dúvidas",
+      "title": "Perguntas frequentes",
+      "whatsapp": "Não achou a sua? Fale comigo no WhatsApp.",
+      "items": [
+        {
+          "q": "Como escolho o horário da sessão?",
+          "a": "Depois do pagamento, a página da sua compra mostra os horários livres."
+        },
+        {
+          "q": "O que preciso para fazer um mapa?",
+          "a": "A data, a hora e a cidade do seu nascimento."
+        },
+        {
+          "q": "Quais formas de pagamento são aceitas?",
+          "a": "Pix e cartão de crédito."
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Contato",
+      "title": "Vamos conversar?",
+      "text": "Me chame pelo WhatsApp, por e-mail ou no Instagram.",
+      "topics": [
+        {
+          "label": "Quero saber qual atendimento é para mim",
+          "message": "Olá! Quero ajuda para escolher o atendimento ideal para mim."
+        },
+        {
+          "label": "Tenho uma dúvida sobre o meu pedido",
+          "message": "Olá! Tenho uma dúvida sobre o meu pedido."
+        }
+      ],
+      "hours": "Segunda a sexta, das 9h às 18h",
+      "button": "Abrir o WhatsApp"
+    },
+    "cta": {
+      "title": "Vamos olhar para a sua história?",
+      "text": "Escolha o atendimento e marque o seu horário, ou tire suas dúvidas no WhatsApp.",
+      "button": "Agendar um atendimento",
+      "link": "/loja",
+      "whatsapp": "Tirar dúvidas no WhatsApp"
+    },
+    "text": {
+      "title": "Título",
+      "body": "Escreva aqui o texto."
+    },
+    "footer": {
+      "about": "Astrologia, tarot e terapias: autoconhecimento para viver com mais consciência.",
+      "whatsapp": "WhatsApp {whatsapp}",
+      "email": "{email}",
+      "instagram": "{instagram}",
+      "hours": "Segunda a sexta, das 9h às 18h",
+      "note": "Pagamentos processados com segurança."
+    }
+  },
+  "defaults": {
+    "theme": {
+      "palette": "coral",
+      "fonts": "cormorant"
+    },
+    "pages": [
+      {
+        "title": "Início",
+        "slug": "/",
+        "menu": false,
+        "seoTitle": "",
+        "seoDescription": "",
+        "sections": [
+          "hero",
+          "services",
+          "sessions",
+          "steps",
+          "about",
+          "products",
+          "sample",
+          "testimonials",
+          "faq",
+          "cta"
+        ]
+      },
+      {
+        "title": "Sobre",
+        "slug": "/sobre",
+        "menu": true,
+        "seoTitle": "",
+        "seoDescription": "",
+        "sections": [
+          "intro",
+          "quote",
+          "timeline",
+          "cta"
+        ]
+      },
+      {
+        "title": "Contato",
+        "slug": "/contato",
+        "menu": true,
+        "seoTitle": "",
+        "seoDescription": "",
+        "sections": [
+          "contact",
+          {
+            "type": "cta",
+            "props": {
+              "title": "Já sabe o que quer?",
+              "text": "Escolha o atendimento e marque o seu horário na hora.",
+              "button": "Ver os atendimentos",
+              "link": "/loja",
+              "whatsapp": ""
+            }
+          }
+        ]
+      }
+    ],
+    "newPage": [
+      "intro",
+      "text",
+      "cta"
+    ]
+  },
+  "variableKeys": [
+    "empresa",
+    "whatsapp",
+    "telefone",
+    "email",
+    "endereco",
+    "registro",
+    "instagram"
+  ],
+  "variables": "Os textos aceitam {empresa}, {whatsapp}, {telefone}, {email}, {endereco}, {registro} e {instagram}: o site mostra os contatos de Loja › Dados da loja › Contatos do site."
+}
