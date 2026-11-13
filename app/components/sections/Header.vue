@@ -10,11 +10,14 @@ const tagline = computed(() => company.text(p.value.tagline))
 // Mapa astral (00026): a amostra gratis entra no menu quando a loja oferece.
 const sampleOn = useState('t:sample-on', () => false)
 onMounted(async () => { sampleOn.value = await useRhBirthCharts().sampleEnabled() })
+// Blog (00049): no menu quando o site tem post no ar.
+const blog = useRhBlogInfo()
 const links = computed(() => [
   { to: '/', label: 'Início' },
   { to: '/loja', label: company.text(p.value.shopLabel) || 'Loja' },
   ...(sampleOn.value ? [{ to: '/mapa-astral', label: 'Mapa astral grátis' }] : []),
-  ...menu.value.map(m => ({ to: m.slug, label: m.title }))
+  ...menu.value.map(m => ({ to: m.slug, label: m.title })),
+  ...(blog.enabled ? [{ to: blog.path, label: 'Blog' }] : [])
 ])
 const route = useRoute()
 const open = ref(false)
