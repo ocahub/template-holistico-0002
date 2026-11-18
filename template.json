@@ -1,7 +1,7 @@
 {
   "id": "template-holistico-0002",
   "name": "Holístico 0002 · Lua",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Site de astróloga e terapeuta: fotos em arco, cartões de mapas e sessões, como funciona, perguntas e loja. Tons de vinho, coral e marfim.",
   "modules": [
     "sales:CreateProduct"
@@ -87,6 +87,9 @@
       "group": "Global",
       "global": true,
       "description": "Marca, menu, conta e sacola. Aparece em todas as páginas.",
+      "skeleton": [
+        "nav"
+      ],
       "fields": [
         {
           "key": "logoImage",
@@ -119,6 +122,9 @@
       "label": "Abertura com foto",
       "group": "Topo",
       "description": "A primeira dobra: chamada, título, texto, dois botões e a foto.",
+      "skeleton": [
+        "@soft eyebrow title:lg text:2 buttons items:3 | image:tall"
+      ],
       "fields": [
         {
           "key": "image",
@@ -201,6 +207,9 @@
       "label": "Apresentação de página",
       "group": "Topo",
       "description": "Topo das páginas internas (Sobre, Contato): foto opcional, título e texto.",
+      "skeleton": [
+        "@soft eyebrow title text:2 | image"
+      ],
       "fields": [
         {
           "key": "image",
@@ -260,6 +269,10 @@
       "label": "Vitrine da loja",
       "group": "Loja",
       "description": "Os produtos à venda na loja: sessões, mapas, produtos físicos ou assinaturas.",
+      "skeleton": [
+        "@center eyebrow title",
+        "products:4"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -355,6 +368,9 @@
       "label": "Mapa astral grátis",
       "group": "Loja",
       "description": "Convite para a amostra grátis do mapa. Só aparece quando a loja oferece a amostra (Mapa astral › Amostra grátis).",
+      "skeleton": [
+        "@soft @center eyebrow title button"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -378,6 +394,10 @@
       "label": "Cartões de serviços",
       "group": "Conteúdo",
       "description": "Uma grade de cartões com símbolo, título, texto e link.",
+      "skeleton": [
+        "@center eyebrow title text:1",
+        "icons:3"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -453,6 +473,10 @@
       "label": "Cartões com foto",
       "group": "Conteúdo",
       "description": "Dois ou três atendimentos com foto grande, texto e link.",
+      "skeleton": [
+        "@center eyebrow title",
+        "cards:3"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -520,6 +544,10 @@
       "label": "Como funciona",
       "group": "Conteúdo",
       "description": "Passos numerados: da escolha ao atendimento.",
+      "skeleton": [
+        "@center eyebrow title",
+        "steps:3"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -568,6 +596,9 @@
       "label": "Sobre (faixa com foto)",
       "group": "Conteúdo",
       "description": "A pessoa por trás dos atendimentos: foto, título, texto e botão.",
+      "skeleton": [
+        "image | eyebrow title text button"
+      ],
       "fields": [
         {
           "key": "image",
@@ -608,6 +639,9 @@
       "label": "Texto e foto lado a lado",
       "group": "Conteúdo",
       "description": "Uma frase grande ao lado de uma foto.",
+      "skeleton": [
+        "title:lg button | image"
+      ],
       "fields": [
         {
           "key": "text",
@@ -653,6 +687,9 @@
       "label": "Citação",
       "group": "Conteúdo",
       "description": "Uma frase em destaque numa faixa colorida, com botão opcional.",
+      "skeleton": [
+        "@dark @center quote button"
+      ],
       "fields": [
         {
           "key": "text",
@@ -678,6 +715,11 @@
       "label": "Trajetória",
       "group": "Conteúdo",
       "description": "Formação ou história em etapas, com texto e fotos.",
+      "skeleton": [
+        "eyebrow title text",
+        "steps:4",
+        "gallery:3"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -761,6 +803,10 @@
       "label": "Depoimentos",
       "group": "Conteúdo",
       "description": "O que dizem os clientes. Sem depoimentos, a seção não aparece no site.",
+      "skeleton": [
+        "@center eyebrow title",
+        "quotes:3"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -809,6 +855,10 @@
       "label": "Perguntas frequentes",
       "group": "Contato",
       "description": "Perguntas e respostas, com o WhatsApp para quem não achar a sua.",
+      "skeleton": [
+        "@center eyebrow title",
+        "faq:4"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -857,6 +907,9 @@
       "label": "Contato",
       "group": "Contato",
       "description": "WhatsApp com assuntos prontos, e-mail, Instagram e horário (dos Contatos do site da loja).",
+      "skeleton": [
+        "eyebrow title text chips:3 | form"
+      ],
       "fields": [
         {
           "key": "eyebrow",
@@ -915,6 +968,9 @@
       "label": "Chamada final",
       "group": "Contato",
       "description": "Faixa de fechamento com dois botões: a loja e o WhatsApp.",
+      "skeleton": [
+        "@dark @center title text buttons"
+      ],
       "fields": [
         {
           "key": "title",
@@ -950,6 +1006,9 @@
       "label": "Texto",
       "group": "Conteúdo",
       "description": "Título e parágrafos.",
+      "skeleton": [
+        "title text:6"
+      ],
       "fields": [
         {
           "key": "title",
@@ -969,6 +1028,9 @@
       "group": "Global",
       "global": true,
       "description": "Texto da marca, menu e contatos. Aparece em todas as páginas.",
+      "skeleton": [
+        "@dark text:3 | links:3"
+      ],
       "fields": [
         {
           "key": "about",
