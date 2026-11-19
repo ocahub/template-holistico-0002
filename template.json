@@ -3,6 +3,7 @@
   "name": "Holístico 0002 · Lua",
   "version": "1.1.0",
   "description": "Site de astróloga e terapeuta: fotos em arco, cartões de mapas e sessões, como funciona, perguntas e loja. Tons de vinho, coral e marfim.",
+  "cover": "preview.png",
   "modules": [
     "sales:CreateProduct"
   ],
